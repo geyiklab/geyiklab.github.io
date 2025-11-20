@@ -3,41 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research | Dr. [Your Name] Lab</title>
+    <title>Research | GeyikLab</title>
+    <meta name="description" content="Research areas: tsRNA biology, Nrf2 pathway, and Glioblastoma resistance.">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* CSS Styles - Same as Index */
+        /* --- 1. VARIABLES & THEME (Matches Index) --- */
         :root {
-            --primary: #1e293b; --accent: #2563eb; --bg: #ffffff; --text: #334155; --light: #f8fafc;
+            --primary: #0f172a;    /* Deep Navy */
+            --secondary: #334155;  /* Slate */
+            --accent: #0284c7;     /* Scientific Blue */
+            --bg-hero: #f8fafc;    /* Light Grey */
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --max-width: 1100px;
         }
+
+        /* --- 2. GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: system-ui, sans-serif; color: var(--text); line-height: 1.6; margin: 0;
-            background: var(--bg); display: flex; flex-direction: column; min-height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--secondary);
+            line-height: 1.8;
+            background-color: var(--white);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        header { border-bottom: 1px solid #e2e8f0; padding: 1rem 0; position: sticky; top: 0; background: white; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        nav ul { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
-        nav a { text-decoration: none; color: var(--text); font-weight: 500; }
-        nav a:hover, nav a.active { color: var(--accent); }
+
+        h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--primary); line-height: 1.3; }
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+
+        /* --- 3. HEADER (Same as Index) --- */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 1000; padding: 0.5rem 0;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+
+        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.5rem; color: var(--primary); }
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
         
-        main { padding: 3rem 0; flex: 1; }
-        h1 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; margin-bottom: 2rem; }
-        article { margin-bottom: 3rem; }
-        h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem; }
+        nav a {
+            font-weight: 600; font-size: 0.95rem; color: var(--secondary);
+            padding: 0.5rem 0; border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* --- 4. PAGE LAYOUT (Specific to Research Page) --- */
+        .page-header {
+            background-color: var(--bg-hero);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+        .page-header h1 { font-size: 2.5rem; }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Sidebar + Content */
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Sidebar Navigation */
+        aside { position: sticky; top: 100px; align-self: start; }
+        .sidebar-title {
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+            color: #94a3b8; margin-bottom: 1rem; font-weight: 700;
+        }
+        .sidebar-links a {
+            display: block; padding: 0.5rem 0; color: var(--secondary);
+            border-left: 3px solid transparent; padding-left: 1rem;
+        }
+        .sidebar-links a:hover { color: var(--accent); border-left-color: var(--border); }
+
+        /* Research Articles */
+        article { margin-bottom: 4rem; scroll-margin-top: 120px; } /* Fixes scroll position */
+        article h2 { font-size: 1.8rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
+        article p { margin-bottom: 1.5rem; font-size: 1.1rem; }
         
-        footer { margin-top: auto; padding: 2rem 0; text-align: center; color: #64748b; border-top: 1px solid #e2e8f0; }
-        @media(max-width:768px) { .nav-flex { flex-direction: column; gap: 1rem; } }
+        /* Highlighting Key Terms */
+        strong { color: var(--primary); }
+
+        /* --- 5. FOOTER --- */
+        footer {
+            margin-top: auto; background: var(--primary); color: #cbd5e1;
+            padding: 3rem 0; text-align: center; font-size: 0.9rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 850px) {
+            .content-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+            aside { display: none; } /* Hide sidebar on mobile for simplicity */
+            .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
+            nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
-        <div class="container nav-flex">
-            <a href="index.html" style="font-weight:700; font-size:1.25rem; color:var(--primary); text-decoration:none;">Dr. Lab</a>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Geyik<span>Lab</span></a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="research.html" class="active" style="color:var(--accent);">Research</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
                     <li><a href="members.html">Members</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -45,32 +130,70 @@
         </div>
     </header>
 
-    <main>
+    <!-- PAGE TITLE -->
+    <section class="page-header">
         <div class="container">
-            <h1>Research Interests</h1>
-            
-            <article>
-                <h2>1. The Role of tsRNA in Cellular Stress</h2>
-                <p>Transfer RNA-derived small RNAs (tsRNAs) are not merely degradation products but are functional small non-coding RNAs. Our lab investigates how specific tsRNA species are upregulated during oxidative stress conditions.</p>
-                <p>We utilize RNA-sequencing to map these fragments and determine their targets within the cell.</p>
-            </article>
-
-            <article>
-                <h2>2. Nrf2 Pathway Regulation</h2>
-                <p>The Nrf2 antioxidant response element is crucial for cell survival. We are studying the interaction between non-coding RNAs and Nrf2 signaling.</p>
-                <p>Our current focus is on how this interaction influences drug resistance in cancer models.</p>
-            </article>
-
-            <article>
-                <h2>3. Temozolomide Resistance Mechanisms</h2>
-                <p>Glioblastoma remains difficult to treat due to resistance to alkylating agents like Temozolomide. We are exploring novel molecular pathways that confer this resistance, looking for potential targets for combination therapy.</p>
-            </article>
+            <h1>Research Focus</h1>
+            <p style="font-size: 1.1rem; color: #475569; max-width: 700px; margin-top: 0.5rem;">
+                Our laboratory employs a multidisciplinary approach combining molecular biology, biochemistry, and bioinformatics.
+            </p>
         </div>
-    </main>
+    </section>
 
+    <!-- MAIN CONTENT -->
+    <div class="container content-wrapper">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside>
+            <div class="sidebar-title">On this page</div>
+            <div class="sidebar-links">
+                <a href="#tsrna">tsRNA Biology</a>
+                <a href="#nrf2">Oxidative Stress (Nrf2)</a>
+                <a href="#glioblastoma">Drug Resistance</a>
+            </div>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <main>
+            <!-- Topic 1 -->
+            <article id="tsrna">
+                <h2>1. tsRNA Biology in Health and Disease</h2>
+                <p>
+                    Transfer RNA-derived small RNAs (tsRNAs) were long considered random degradation products. However, recent evidence suggests they are <strong>functional, regulated non-coding RNAs</strong> that play critical roles in gene expression.
+                </p>
+                <p>
+                    Our lab investigates how tsRNA biogenesis is triggered by specific cellular stressors. Unlike microRNAs, tsRNAs can inhibit translation by displacing the initiation complex. We are mapping the "tsRNAome" in various cell lines to identify specific signatures associated with disease states.
+                </p>
+            </article>
+
+            <!-- Topic 2 -->
+            <article id="nrf2">
+                <h2>2. Oxidative Stress and Nrf2 Signaling</h2>
+                <p>
+                    The <strong>Nrf2 (nuclear factor erythroid 2-related factor 2)</strong> pathway is the cell's primary defense mechanism against oxidative stress. Dysregulation of this pathway is a hallmark of both neurodegenerative diseases and cancer.
+                </p>
+                <p>
+                    We are exploring the crosstalk between non-coding RNAs and Nrf2. Specifically, we aim to understand how certain RNA species can sequester Nrf2 in the cytoplasm or promote its translocation to the nucleus, thereby altering the cell's antioxidant response.
+                </p>
+            </article>
+
+            <!-- Topic 3 -->
+            <article id="glioblastoma">
+                <h2>3. Mechanisms of Therapy Resistance</h2>
+                <p>
+                    Glioblastoma is the most aggressive form of brain cancer. Standard of care involves the alkylating agent Temozolomide (TMZ), but resistance develops rapidly.
+                </p>
+                <p>
+                    Our hypothesis is that stress-induced RNAs and elevated Nrf2 activity confer a survival advantage to cancer cells against TMZ. By defining these molecular mechanisms, we hope to identify <strong>novel targets</strong> that can re-sensitize resistant tumors to chemotherapy.
+                </p>
+            </article>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Academic Lab. All rights reserved.</p>
+            <p>&copy; 2025 GeyikLab. All rights reserved.</p>
         </div>
     </footer>
 
