@@ -85,17 +85,20 @@
         }
 
         /* --- SPECIAL PI CARD DESIGN (Horizontal) --- */
+      /* --- SPECIAL PI CARD DESIGN (Horizontal) --- */
         .pi-card {
             display: flex;
-            align-items: center; /* Vertically center the content */
+            align-items: center;
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2rem;
-            gap: 3rem; /* Space between left and right side */
+            padding: 3rem; /* Increased padding for a bigger look */
+            gap: 3rem;
             transition: transform 0.2s, box-shadow 0.2s;
             margin-bottom: 2rem;
+            min-height: 420px; /* FIX: Forces height to match student cards */
         }
+        
         .pi-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
@@ -104,10 +107,23 @@
         
         /* Left Side: Photo, Name, Title */
         .pi-left {
-            flex: 0 0 240px; /* Fixed width for consistency */
+            flex: 0 0 250px; 
             text-align: center;
             border-right: 1px solid var(--border);
             padding-right: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* FIX: Ensure PI photo stays circular and doesn't squash */
+        .pi-left .member-photo {
+            width: 160px;       /* Slightly larger for PI */
+            height: 160px;      /* Fixed height */
+            min-height: 160px;  /* Prevents squashing */
+            min-width: 160px;   /* Prevents squashing */
+            margin-bottom: 1.5rem;
         }
         
         /* Right Side: Bio */
