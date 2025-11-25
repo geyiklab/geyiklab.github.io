@@ -168,11 +168,26 @@
             box-shadow: 0 0 0 1px var(--border);
         }
 
-        .member-card h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
+        /* --- FIX FOR ALIGNMENT --- */
+        /* 1. Fix height for Name (h3) */
+        .member-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.2rem;
+            /* NEW: Force height for 2 lines of text */
+            min-height: 2.6em; 
+            display: flex;
+            align-items: flex-end; /* Aligns single-line names to bottom */
+            justify-content: center;
+        }
+
+        /* 2. Fix height for Role */
         .member-role {
             color: var(--accent); font-weight: 700; font-size: 0.85rem;
             text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;
+            /* NEW: Ensure it always takes up one line's height */
+            min-height: 1.2em;
         }
+        
         .member-bio { font-size: 0.95rem; color: #475569; line-height: 1.5; }
 
         /* Alumni List */
