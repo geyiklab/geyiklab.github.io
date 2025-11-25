@@ -179,11 +179,25 @@
             /* Alignment Logic */
             display: flex;
             align-items: flex-start; /* Forces text to start at the TOP */
-            justify-content: center; /* Keeps text centered horizontally */
-            
+            justify-content: center; /* Keeps text centered horizontally */            
             overflow: hidden;        /* Hides anything beyond 2 lines just in case */
         }
+       
+        /* --- RESTORE BLUE TITLE & ADD SPACING --- */
         
+        .member-role {
+            color: var(--accent) !important; /* Force Blue color */
+            font-weight: 700;                /* Bold */
+            font-size: 0.85rem;
+            text-transform: uppercase;       /* ALL CAPS */
+            letter-spacing: 0.5px;
+            
+            /* Spacing adjustments */
+            margin-top: 0.5rem;   
+            margin-bottom: 1.5rem;           /* Added extra space below title */
+            min-height: 1.2em;               /* Keep alignment fix */
+        }
+       
         .member-bio { font-size: 0.95rem; color: #475569; line-height: 1.5; }
 
         /* Alumni List */
