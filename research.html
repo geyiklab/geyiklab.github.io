@@ -14,19 +14,18 @@
     <style>
         /* --- 1. VARIABLES & THEME --- */
         :root {
-            --primary: #0f172a;    /* Deep Navy */
-            --secondary: #334155;  /* Slate */
-            --accent: #0284c7;     /* Scientific Blue */
-            --bg-hero: #f8fafc;    /* Light Grey */
+            --primary: #0f172a;    
+            --secondary: #334155;  
+            --accent: #0284c7;     
+            --bg-hero: #f8fafc;    
             --white: #ffffff;
             --border: #e2e8f0;
-            --max-width: 1250px;   /* MATCHED to Index */
+            --max-width: 1250px;   
         }
 
         /* --- 2. GLOBAL RESET --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        /* ADDED: Scroll Fix for Sidebar Links */
         html {
             scroll-padding-top: 100px; 
             scroll-behavior: smooth;
@@ -35,14 +34,13 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--secondary);
-            line-height: 1.6; /* MATCHED to Index (was 1.8) */
+            line-height: 1.6;
             background-color: var(--white);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* MATCHED: Font weights from Index */
         h1, h2, h3 { 
             font-family: 'Merriweather', serif; 
             color: var(--primary); 
@@ -50,7 +48,7 @@
             font-weight: 700; 
         }
         
-        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s; }
 
         /* --- 3. HEADER --- */
         header {
@@ -59,7 +57,6 @@
             position: sticky; top: 0; z-index: 1000; padding: 0.5rem 0;
         }
 
-        /* MATCHED: Padding 2.5rem */
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
 
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
@@ -67,7 +64,6 @@
         .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
         .logo span { color: var(--accent); }
 
-        /* MATCHED: Gap 2.5rem */
         nav ul { display: flex; gap: 2.5rem; list-style: none; }
         
         nav a {
@@ -84,27 +80,51 @@
             border-bottom: 1px solid var(--border);
             margin-bottom: 3rem;
         }
-        /* MATCHED: Bold weight for main title */
         .page-header h1 { font-size: 2.5rem; font-weight: 900; }
 
         .content-wrapper {
             display: grid;
-            grid-template-columns: 250px 1fr; /* Sidebar + Content */
+            grid-template-columns: 250px 1fr; /* Reset to standard width */
             gap: 4rem;
             margin-bottom: 4rem;
         }
 
-        /* Sidebar Navigation */
-        aside { position: sticky; top: 100px; align-self: start; }
+        /* --- MINIMALISTIC SIDEBAR --- */
+        aside { 
+            position: sticky; 
+            top: 100px; 
+            align-self: start; 
+        }
+
         .sidebar-title {
-            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
-            color: #94a3b8; margin-bottom: 1rem; font-weight: 700;
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            color: #94a3b8; 
+            margin-bottom: 1rem; 
+            font-weight: 700;
         }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+        }
+
         .sidebar-links a {
-            display: block; padding: 0.5rem 0; color: var(--secondary);
-            border-left: 3px solid transparent; padding-left: 1rem;
+            padding: 0.5rem 0 0.5rem 1rem; /* Left padding for indent */
+            color: var(--secondary);
+            border-left: 2px solid var(--border); /* Neutral gray line */
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
         }
-        .sidebar-links a:hover { color: var(--accent); border-left-color: var(--border); }
+
+        /* Hover State: Line turns blue, text turns blue */
+        .sidebar-links a:hover { 
+            color: var(--accent); 
+            border-left-color: var(--accent); 
+            background-color: transparent; 
+        }
 
         /* Research Articles */
         article { margin-bottom: 4rem; scroll-margin-top: 120px; } 
