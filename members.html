@@ -22,7 +22,7 @@
             --bg-hero: #f8fafc;    /* Light Grey */
             --white: #ffffff;
             --border: #e2e8f0;
-            --max-width: 1250px;   /* MATCHED to Index */
+            --max-width: 1100px;   
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -31,7 +31,7 @@
            ========================================= */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* ADDED: Scroll Fix */
+        /* Scroll Fix */
         html {
             scroll-padding-top: 100px; 
             scroll-behavior: smooth;
@@ -47,7 +47,7 @@
             min-height: 100vh;
         }
 
-        /* MATCHED: Font weights from Index */
+        /* KEPT: Bold fonts for consistency */
         h1, h2, h3, h4 {
             font-family: 'Merriweather', serif;
             color: var(--primary);
@@ -61,7 +61,7 @@
         .container { 
             max-width: var(--max-width); 
             margin: 0 auto; 
-            padding: 0 2.5rem; /* MATCHED padding */
+            padding: 0 2rem; /* REVERTED: Old Padding */
         }
 
         main { padding-bottom: 4rem; }
@@ -78,10 +78,10 @@
 
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 
-        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
+        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.5rem; color: var(--primary); }
         .logo span { color: var(--accent); }
 
-        nav ul { display: flex; gap: 2.5rem; list-style: none; } /* MATCHED gap */
+        nav ul { display: flex; gap: 2rem; list-style: none; } /* REVERTED: Old Gap */
 
         nav a {
             font-weight: 600; font-size: 0.95rem; color: var(--secondary);
@@ -96,18 +96,18 @@
         /* Group Photo Section */
         .group-photo-section {
             background-color: var(--bg-hero);
-            padding: 4rem 0; /* MATCHED spacing */
-            text-align: center;
+            padding: 4rem 0;
+            text-align: left; /* CHANGED: Left Aligned for Uniformity */
             border-bottom: 1px solid var(--border);
             margin-bottom: 4rem;
         }
         
-        /* Main Title Styling */
         .group-photo-section h1 { font-size: 2.5rem; font-weight: 900; }
 
         .group-photo-placeholder {
             width: 100%; max-width: 900px; height: 400px;
-            background-color: #cbd5e1; margin: 2rem auto 0 auto;
+            background-color: #cbd5e1; 
+            margin: 2rem 0 0 0; /* CHANGED: Aligned Left (removed auto margin) */
             border-radius: 8px; display: flex; align-items: center; justify-content: center;
             color: var(--primary); font-weight: 600; box-shadow: var(--shadow);
         }
@@ -163,7 +163,7 @@
         .member-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem; /* MATCHED gap */
+            gap: 2rem; /* REVERTED: Old Gap */
         }
 
         .member-card {
@@ -222,7 +222,7 @@
         .collab-grid {
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 2.5rem;
+            gap: 2rem;
         }
         
         .collab-item {
