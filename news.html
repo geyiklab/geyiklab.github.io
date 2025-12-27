@@ -22,7 +22,7 @@
             --bg-hero: #f8fafc;    
             --white: #ffffff;
             --border: #e2e8f0;
-            --max-width: 1250px;   /* MATCHES INDEX */
+            --max-width: 1250px;   
             --read-width: 850px;   
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
@@ -40,7 +40,8 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--secondary);
-            line-height: 1.7;
+            /* FIXED: Changed from 1.7 to 1.6 to match Research page exactly */
+            line-height: 1.6; 
             background-color: var(--white);
             display: flex;
             flex-direction: column;
@@ -57,34 +58,20 @@
         a { text-decoration: none; color: inherit; transition: all 0.2s; }
 
         /* =========================================
-           3. HEADER (EXACT COPY FROM INDEX.HTML)
+           3. HEADER (EXACT CLONE OF RESEARCH PAGE)
            ========================================= */
         header {
             background: var(--white);
             border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 1000;
-            padding: 0.5rem 0; /* Matches Index */
+            position: sticky; top: 0; z-index: 1000; 
+            padding: 0.5rem 0;
         }
 
-        .container { 
-            max-width: var(--max-width); 
-            margin: 0 auto; 
-            padding: 0 2.5rem; /* Matches Index */
-        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
 
-        .nav-wrapper { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            height: 70px; /* Matches Index */
-        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 
-        .logo { 
-            font-family: 'Merriweather', serif; 
-            font-weight: 900; 
-            font-size: 1.6rem; /* Matches Index */
-            color: var(--primary); 
-        }
+        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
         .logo span { color: var(--accent); }
 
         nav ul { display: flex; gap: 2.5rem; list-style: none; }
