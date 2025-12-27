@@ -44,12 +44,12 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
         /* =========================================
-           3. HEADER (ALIGNMENT FIX)
+           3. HEADER (EXACT MATCH TO INDEX.HTML)
            ========================================= */
         header {
             background: var(--white); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 1000;
-            padding: 0; /* FIXED: Removed padding */
+            padding: 0.5rem 0; /* RESTORED: Matches Index padding */
         }
         
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
@@ -58,7 +58,7 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            height: 80px; /* FIXED: Exact 80px height */
+            height: 70px; /* RESTORED: Matches Index height */
         }
         
         .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
