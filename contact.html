@@ -35,7 +35,6 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--secondary);
-            /* FIXED: Changed from 1.7 to 1.6 to match Research page exactly */
             line-height: 1.6;
             background-color: var(--white);
             display: flex; flex-direction: column; min-height: 100vh;
@@ -45,7 +44,7 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
         /* =========================================
-           3. HEADER (EXACT CLONE OF RESEARCH PAGE)
+           3. HEADER
            ========================================= */
         header {
             background: var(--white); border-bottom: 1px solid var(--border);
@@ -72,8 +71,10 @@
            4. PAGE LAYOUT 
            ========================================= */
         .page-header {
-            background-color: var(--bg-hero); padding: 4rem 0;
-            border-bottom: 1px solid var(--border); margin-bottom: 4rem;
+            background-color: var(--bg-hero); 
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 4rem;
         }
         .page-header h1 { font-size: 2.5rem; font-weight: 900; }
 
@@ -90,7 +91,7 @@
             gap: 4rem;
         }
 
-        .info-box { margin-bottom: 2.5rem; }
+        .info-box { margin-bottom: 2rem; }
         .info-box h3 { font-size: 1.25rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; font-weight: 700; }
         .info-box p { font-size: 1.1rem; color: #475569; }
         
@@ -185,7 +186,16 @@
                     <h3>Email</h3>
                     <a href="mailto:caner.geyik@istinye.edu.tr" class="email-link">caner.geyik@istinye.edu.tr</a>
                 </div>
-
+              
+                <div class="info-box">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com.tr/citations?user=LA3BEqcAAAAJ" class="social-btn" target="_blank">Google Scholar</a>
+                        <a href="https://www.linkedin.com/in/canergeyik/" class="social-btn" target="_blank">LinkedIn</a>
+                        <a href="https://orcid.org/0000-0002-8382-2186" class="social-btn" target="_blank">ORCİD</a>
+                    </div>
+                </div>
+              
                 <div class="info-box">
                     <h3>Address</h3>
                     <address style="font-style: normal; line-height: 1.8;">
@@ -197,14 +207,6 @@
                     </address>
                 </div>
 
-                <div class="info-box">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://scholar.google.com.tr/citations?user=LA3BEqcAAAAJ" class="social-btn" target="_blank">Google Scholar</a>
-                        <a href="https://www.linkedin.com/in/canergeyik/" class="social-btn" target="_blank">LinkedIn</a>
-                        <a href="https://orcid.org/0000-0002-8382-2186" class="social-btn" target="_blank">ORCİD</a>
-                    </div>
-                </div>
             </div>
 
             <!-- RIGHT COLUMN: Join & Map -->
