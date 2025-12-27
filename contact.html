@@ -22,8 +22,8 @@
             --bg-hero: #f8fafc;
             --white: #ffffff;
             --border: #e2e8f0;
-            --max-width: 1250px;    /* Standard Site Width (Header/Titles) */
-            --narrow-width: 1100px; /* Content Width (Matches Members Page) */
+            --max-width: 1250px;
+            --narrow-width: 1100px;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -44,22 +44,21 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
         /* =========================================
-           3. HEADER (MATCHING OTHER PAGES)
+           3. HEADER (ALIGNMENT FIX)
            ========================================= */
         header {
             background: var(--white); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 1000;
-            /* REMOVED: padding: 0.5rem 0; */
+            padding: 0; /* FIXED: Removed padding */
         }
         
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
         
-        /* CHANGED: height from 70px to 80px to match other pages */
         .nav-wrapper { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            height: 80px; 
+            height: 80px; /* FIXED: Exact 80px height */
         }
         
         .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
@@ -82,7 +81,6 @@
         }
         .page-header h1 { font-size: 2.5rem; font-weight: 900; }
 
-        /* Narrow container for the grid content */
         .container-narrow {
             max-width: var(--narrow-width);
             margin: 0 auto;
@@ -96,7 +94,6 @@
             gap: 4rem;
         }
 
-        /* Info Boxes */
         .info-box { margin-bottom: 2.5rem; }
         .info-box h3 { font-size: 1.25rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; font-weight: 700; }
         .info-box p { font-size: 1.1rem; color: #475569; }
@@ -104,7 +101,6 @@
         .email-link { color: var(--accent); font-weight: 600; font-size: 1.2rem; }
         .email-link:hover { text-decoration: underline; }
 
-        /* Social Buttons */
         .social-links { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
         .social-btn {
             padding: 0.75rem 1.5rem;
@@ -123,7 +119,6 @@
             transform: translateY(-2px);
         }
 
-        /* Join Box */
         .join-card {
             background: var(--bg-hero);
             padding: 2rem;
@@ -132,7 +127,6 @@
         }
         .join-card h3 { margin-bottom: 1rem; }
         
-        /* Map Placeholder */
         .map-container {
             margin-top: 2rem;
             height: 300px;
@@ -153,7 +147,6 @@
         @media (max-width: 850px) {
             .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
             nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-            
             .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
         }
     </style>
