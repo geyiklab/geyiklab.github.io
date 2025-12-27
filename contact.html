@@ -48,12 +48,19 @@
            ========================================= */
         header {
             background: var(--white); border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 1000; padding: 0.5rem 0;
+            position: sticky; top: 0; z-index: 1000;
+            /* REMOVED: padding: 0.5rem 0; */
         }
         
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
         
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        /* CHANGED: height from 70px to 80px to match other pages */
+        .nav-wrapper { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 80px; 
+        }
         
         .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); }
         .logo span { color: var(--accent); }
