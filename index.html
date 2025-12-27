@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. VARIABLES & THEME --- */
+        /* =========================================
+           1. VARIABLES & THEME 
+           ========================================= */
         :root {
             --primary: #0f172a;
             --secondary: #334155;
@@ -22,10 +24,12 @@
             --white: #ffffff;
             --border: #e2e8f0;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --max-width: 1250px; /* UPDATED: Wider layout */
+            --max-width: 1250px; 
         }
 
-        /* --- 2. GLOBAL RESET --- */
+        /* =========================================
+           2. GLOBAL RESET 
+           ========================================= */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
@@ -36,7 +40,6 @@
             display: flex; flex-direction: column; min-height: 100vh;
         }
 
-        /* UPDATED: Added font-weight to ensure consistency across pages */
         h1, h2, h3 { 
             font-family: 'Merriweather', serif; 
             color: var(--primary); 
@@ -46,24 +49,27 @@
         
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
-        /* --- 3. HEADER --- */
+        /* =========================================
+           3. HEADER 
+           ========================================= */
         header {
             background: var(--white); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 1000; padding: 0.5rem 0;
         }
-        /* UPDATED: Increased padding */
+        
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
         
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); } /* Slightly larger logo */
+        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.6rem; color: var(--primary); } 
         .logo span { color: var(--accent); }
         
-        /* UPDATED: Increased gap */
         nav ul { display: flex; gap: 2.5rem; list-style: none; }
         nav a { font-weight: 600; font-size: 0.95rem; color: var(--secondary); padding: 0.5rem 0; border-bottom: 2px solid transparent; }
         nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        /* --- 4. HERO SECTION (SPLIT LAYOUT) --- */
+        /* =========================================
+           4. HERO SECTION (SPLIT LAYOUT) 
+           ========================================= */
         .hero-section {
             background-color: var(--bg-hero);
             padding: 3rem 0;
@@ -86,7 +92,7 @@
         }
         .hero-btn:hover { background: #1e293b; transform: translateY(-2px); }
 
-/* Right: News Slider */
+        /* Right: News Slider */
         .slider-container {
             background: var(--white);
             border: 1px solid var(--border);
@@ -96,7 +102,7 @@
             height: 320px; 
             position: relative;
             overflow: hidden;
-            display: block; /* CHANGED from flex to block */
+            display: block; 
         }
         
         .slider-label {
@@ -110,7 +116,7 @@
         .slide {
             display: none; 
             animation: fadeEffect 1s;
-            padding-top: 2rem; /* ADDED to push text down */
+            padding-top: 2rem; 
         }
         .slide.active { display: block; } 
 
@@ -131,7 +137,6 @@
             font-size: 1rem; 
             color: #64748b; 
             margin-bottom: 1rem;
-            /* ADDED: Fixed height settings */
             height: 4.8rem;
             overflow: hidden;
             display: -webkit-box;
@@ -141,7 +146,7 @@
         
         .slide-date { font-size: 0.85rem; color: #94a3b8; font-weight: 600; }
 
-        /* ADDED: Pins the link to the bottom */
+        /* Desktop Link Style (Pinned to bottom) */
         .slide a {
             position: absolute;
             bottom: 55px;
@@ -165,10 +170,11 @@
         }
         .dot.active { background-color: var(--accent); }
 
-        /* --- 5. QUICK NAVIGATION DECK --- */
+        /* =========================================
+           5. QUICK NAVIGATION DECK 
+           ========================================= */
         .deck-section { padding: 4rem 0; }
         
-        /* UPDATED: Bold, larger, more margin below */
         .deck-title { 
             text-align: center; 
             margin-bottom: 3rem; 
@@ -176,7 +182,6 @@
             font-weight: 700;
         }
         
-        /* UPDATED: Increased gap */
         .deck-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;
         }
@@ -188,7 +193,6 @@
         }
         .deck-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         
-        /* Icons */
         .deck-icon {
             width: 70px; height: 70px; background: #f0f9ff; color: var(--accent);
             border-radius: 50%; margin: 0 auto 1.5rem auto;
@@ -196,17 +200,43 @@
             font-size: 1.75rem; font-weight: bold; font-family: serif;
         }
 
-        /* --- 6. FOOTER --- */
+        /* =========================================
+           6. FOOTER 
+           ========================================= */
         footer { margin-top: auto; background: var(--primary); color: #cbd5e1; padding: 4rem 0; text-align: center; font-size: 0.95rem; }
 
-        /* Mobile */
+        /* =========================================
+           MOBILE RESPONSIVENESS
+           ========================================= */
         @media (max-width: 950px) {
             .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
             nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
             .hero-btn { margin-bottom: 2rem; }
-            .slider-container { height: auto; min-height: 280px; text-align: left; }
             .hero-text p { margin: 0 auto 2rem auto; }
+
+            /* FIXED: Slider mobile adjustments */
+            .slider-container { 
+                height: auto; 
+                min-height: 280px; 
+                text-align: left;
+                padding-bottom: 4.5rem; /* Increased padding to make room for dots */
+            }
+
+            /* FIXED: Un-pin the link so it flows naturally after text */
+            .slide a {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 1rem;
+                display: inline-block;
+            }
+
+            /* Optional: Let text height adjust automatically on mobile */
+            .slide p {
+                height: auto;
+                max-height: 6rem; /* Limit height if you still want clamping */
+            }
         }
     </style>
 </head>
@@ -262,7 +292,7 @@
                     </div>
 
                     <!-- SLIDE 3 -->
-                    <div class="slide active">
+                    <div class="slide">
                         <div class="slide-date">Nov 24, 2025</div>
                         <h3>TUBITAK 1002 Project Accepted</h3>
                         <p>We congratulate our collaborator Dr. Berrak Varan on acceptance of our joint project!</p>
