@@ -182,8 +182,12 @@
             font-weight: 700;
         }
         
+        /* Desktop Grid */
         .deck-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem;
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 2.5rem;
+            justify-content: center;
         }
 
         .deck-card {
@@ -209,21 +213,23 @@
            MOBILE RESPONSIVENESS
            ========================================= */
         @media (max-width: 950px) {
+            /* FIXED: Reduced padding on mobile to prevent squishing */
+            .container { padding: 0 1.5rem; }
+
             .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
             nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
             .hero-btn { margin-bottom: 2rem; }
             .hero-text p { margin: 0 auto 2rem auto; }
 
-            /* FIXED: Slider mobile adjustments */
             .slider-container { 
                 height: auto; 
                 min-height: 280px; 
                 text-align: left;
-                padding-bottom: 4.5rem; /* Increased padding to make room for dots */
+                padding-bottom: 4.5rem; 
             }
 
-            /* FIXED: Un-pin the link so it flows naturally after text */
             .slide a {
                 position: relative;
                 bottom: auto;
@@ -232,10 +238,14 @@
                 display: inline-block;
             }
 
-            /* Optional: Let text height adjust automatically on mobile */
             .slide p {
                 height: auto;
-                max-height: 6rem; /* Limit height if you still want clamping */
+                max-height: 6rem;
+            }
+
+            /* FIXED: Force single column on mobile to fix "right stack" issue */
+            .deck-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
