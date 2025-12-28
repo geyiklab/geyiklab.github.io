@@ -213,7 +213,7 @@
            MOBILE RESPONSIVENESS
            ========================================= */
         @media (max-width: 950px) {
-            /* FIXED: Reduced padding on mobile to prevent squishing */
+           
             .container { padding: 0 1.5rem; }
 
             .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
@@ -243,7 +243,13 @@
                 max-height: 6rem;
             }
 
-            /* FIXED: Force single column on mobile to fix "right stack" issue */
+            .slide h3 {
+                height: auto;              /* Allows the box to grow */
+                -webkit-line-clamp: none;  /* Removes the 2-line limit */
+                display: block;            /* Resets the box model */
+                overflow: visible;         /* Shows all text */
+            }
+
             .deck-grid {
                 grid-template-columns: 1fr;
             }
@@ -298,7 +304,7 @@
                         <div class="slide-date">Dec 22, 2025</div>
                         <h3>Welcome New Members</h3>
                         <p>We are thrilled to welcome Çisem ÖZGÜNGÖR as a MSc student to the GeyikLab.</p>
-                        <a href="news.html#slide2" >Meet the team &rarr;</a>
+                        <a href="news.html#slide2" >Read more &rarr;</a>
                     </div>
 
                     <!-- SLIDE 3 -->
